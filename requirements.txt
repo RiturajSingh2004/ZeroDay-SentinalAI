@@ -1,0 +1,34 @@
+# Requirements for Zero-Day Attack Mitigation Framework
+
+# Core dependencies
+pandas==2.0.0
+numpy==1.24.0
+scikit-learn==1.3.0
+tensorflow==2.17.0
+keras==3.6.0
+psutil==5.9.5
+
+# Data processing and visualization
+plotly==5.18.0
+dash==2.14.0
+
+# Model persistence
+joblib==1.3.0
+pickle5==0.0.12
+
+# Networking and system utilities
+requests==2.31.0
+
+# Web dashboard
+dash-bootstrap-components==1.5.0
+
+# Logging and monitoring
+logging==0.5.1.2
+
+# Threading and concurrency
+queue==1.0.2
+threading==3.0.0
+
+# File operations
+json==2.0.9
+os-sys==2.1.4
