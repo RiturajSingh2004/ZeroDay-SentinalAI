@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 import tensorflow as tf
 import keras
 from keras import Sequential, Model
-from keras import Dense, Input, Dropout
+from keras.layers import Dense, Input, Dropout
 import numpy as np
 import pandas as pd
 import pickle
