@@ -54,7 +54,7 @@ git clone https://github.com/your-repo/zero-day-detection.git
 cd zero-day-detection
 
 # Install dependencies
-pip install pandas numpy scikit-learn tensorflow dash plotly psutil
+pip install pandas==2.0.0 numpy==1.24.0 scikit-learn==1.3.0 tensorflow==2.17.0 keras==3.6.0 psutil==5.9.5 plotly==5.18.0 dash==2.14.0 dash-bootstrap-components==1.5.0 joblib==1.3.0 requests==2.31.0
 ```
 
 ### Usage
