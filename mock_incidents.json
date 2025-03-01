@@ -1,0 +1,66 @@
+[
+    {
+      "id": "incident_0",
+      "timestamp": "2025-02-28T14:30:00",
+      "alert": {
+        "alert_type": "zero_day_attack",
+        "severity": "medium",
+        "anomaly_score": 0.7,
+        "details": {
+          "cpu_percent": {"value": 78.3},
+          "network_sent": {"value": 8000000}
+        }
+      },
+      "status": "mitigated",
+      "mitigation_actions": [
+        {
+          "timestamp": "2025-02-28T14:30:15",
+          "action": {
+            "type": "command",
+            "command": "ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head -n 10"
+          },
+          "result": {
+            "success": true,
+            "output": "Sample output data for CPU check"
+          }
+        }
+      ]
+    },
+    {
+      "id": "incident_1",
+      "timestamp": "2025-02-28T16:45:00",
+      "alert": {
+        "alert_type": "zero_day_attack",
+        "severity": "high",
+        "anomaly_score": 0.9,
+        "details": {
+          "cpu_percent": {"value": 92.5},
+          "network_sent": {"value": 15000000}
+        }
+      },
+      "status": "mitigated",
+      "mitigation_actions": [
+        {
+          "timestamp": "2025-02-28T16:45:20",
+          "action": {
+            "type": "command",
+            "command": "netstat -tunap | grep ESTABLISHED | wc -l"
+          },
+          "result": {
+            "success": true,
+            "output": "253"
+          }
+        },
+        {
+          "timestamp": "2025-02-28T16:45:25",
+          "action": {
+            "type": "alert",
+            "message": "Unusual network activity detected"
+          },
+          "result": {
+            "success": true
+          }
+        }
+      ]
+    }
+  ]

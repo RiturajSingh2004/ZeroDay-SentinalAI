@@ -1,0 +1,54 @@
+{
+    "rules": [
+      {
+        "name": "CPU Overload",
+        "conditions": {
+          "cpu_percent": ">80"
+        },
+        "actions": [
+          {
+            "type": "command",
+            "command": "ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head -n 10"
+          },
+          {
+            "type": "alert",
+            "message": "High CPU usage detected"
+          }
+        ]
+      },
+      {
+        "name": "Network Anomaly",
+        "conditions": {
+          "network_sent": ">10000000",
+          "network_recv": ">10000000"
+        },
+        "actions": [
+          {
+            "type": "command",
+            "command": "netstat -tunap | grep ESTABLISHED | wc -l"
+          },
+          {
+            "type": "alert",
+            "message": "Unusual network activity detected"
+          }
+        ]
+      },
+      {
+        "name": "Memory Pressure",
+        "conditions": {
+          "memory_percent": ">90"
+        },
+        "actions": [
+          {
+            "type": "command",
+            "command": "ps -eo pid,ppid,cmd,%mem --sort=-%mem | head -n 10"
+          },
+          {
+            "type": "alert",
+            "message": "High memory usage detected",
+            "severity": "high"
+          }
+        ]
+      }
+    ]
+  }
